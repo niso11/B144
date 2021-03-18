@@ -59,7 +59,7 @@ public class NewTest {
 		//test = t3.createTest("test1", "description");
 	}
         
-		@Test (priority = 0)//כניסת מנויים
+	/*	@Test (priority = 0)//כניסת מנויים
 		public void member() throws InterruptedException, IOException, AWTException{
 			Testing.member();
 			}
@@ -70,7 +70,7 @@ public class NewTest {
 		public void selfRegister()throws InterruptedException, IOException, AWTException{
 		Testing.sing_alon();
 		}
-	*/
+	
 	
 	@Test(priority = 2)//חיפוש עסקים
 	public void search_Business() throws InterruptedException, IOException, AWTException{
@@ -80,11 +80,11 @@ public class NewTest {
 	@Test(priority = 3)//השארת תגובה
 	public void rateBusiness()  throws InterruptedException, IOException, AWTException{
 		Testing.rateBusiness();
-	}
+	}*/
 	@Test(priority = 4)//קופונים
 	public void kopon_world() throws InterruptedException, IOException, AWTException {
 		Testing.kopon_world();
-	}
+	}/*
 	@Test(priority = 5)//חיפוש אנשים
 	public void search_people() throws InterruptedException, IOException, AWTException {
 		Testing.search_people();
@@ -96,7 +96,7 @@ public class NewTest {
 	@Test(priority = 7)//מי פנוי
 	public void MiPanoey() throws InterruptedException, IOException, AWTException {
 		Testing.MiPanoey();
-	}
+	}*/
 	
 
 	@AfterClass
