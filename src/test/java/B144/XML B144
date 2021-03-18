@@ -1,0 +1,11 @@
+
+<suite>
+<test name="member">
+
+<classes>
+  <class name="NewTest"/>
+</classes>
+</test>
+
+
+</suite>

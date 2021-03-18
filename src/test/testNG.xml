@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng1.0.dtd">
+<suite name="Parallel test suite" parallel="tests">
+<test name="Chrome Test">
+<parameter name="browser" value="chrome"/>
+<classes>
+<class name="paralle.NewTest_testNG"/>
+</classes>
+</test>
+<test name="firefox Test">
+<parameter name="browser" value="FF"/>
+<classes>
+<class name
