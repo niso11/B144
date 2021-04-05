@@ -152,6 +152,9 @@ public class elements {
 	}
 //****************************************התחברות לפייסבוק**************************************
 	public static void Facebook(WebDriver driver) throws InterruptedException, AWTException {
+		if (driver.findElement(By.id("email"))!= null) {
+			driver.findElement(By.id("email")).clear();
+		}
 		driver.findElement(By.id("email")).sendKeys("0503042873");
         driver.findElement(By.id("pass")).sendKeys("qwe321!");
         Thread.sleep(500);
@@ -300,7 +303,39 @@ public class elements {
 	public static void facebookRate_click(WebDriver driver) {
 		driver.findElement(By.id("loginWithFacebookBtn")).click();
 	}
-	
+	 public static void writeString(String s) throws AWTException {
+Robot robot=new Robot();
+         for (int i = 0; i < s.length(); i++) {
+
+             char c = s.charAt(i);
+
+             if (Character.isUpperCase(c)) {
+
+                 robot.keyPress(KeyEvent.VK_SHIFT);
+
+             }
+
+             robot.keyPress(Character.toUpperCase(c));
+             robot.delay(500);
+
+             robot.keyRelease(Character.toUpperCase(c));
+             robot.delay(500);
+
+
+             if (Character.isUpperCase(c)) {
+
+                 robot.keyRelease(KeyEvent.VK_SHIFT);
+
+             }
+
+         }
+
+         robot.delay(100);
+
+   
+
+}
+
 	
 }
 

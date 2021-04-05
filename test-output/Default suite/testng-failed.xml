@@ -5,11 +5,8 @@
     <classes>
       <class name="B144.NewTest">
         <methods>
-          <include name="maps"/>
-          <include name="search_people"/>
-          <include name="MiPanoey"/>
+          <include name="fullSelf_ragistr"/>
           <include name="open_brows"/>
-          <include name="kopon_world"/>
           <include name="afterClass"/>
         </methods>
       </class> <!-- B144.NewTest -->

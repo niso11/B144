@@ -52,7 +52,7 @@ public class reportFanction {
 		htmlReporter = new ExtentSparkReporter(filePath);
 		htmlReporter.config().setDocumentTitle("practist 1");
         htmlReporter.config().setReportName("Regression cycle");
-        htmlReporter.config().setEncoding("windows-1255"); 
+        htmlReporter.config().setEncoding("utf-8"); 
         return htmlReporter;
         
 	}
