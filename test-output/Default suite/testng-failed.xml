@@ -5,7 +5,7 @@
     <classes>
       <class name="B144.NewTest">
         <methods>
-          <include name="fullSelf_ragistr"/>
+          <include name="full_selfRegister"/>
           <include name="open_brows"/>
           <include name="afterClass"/>
         </methods>

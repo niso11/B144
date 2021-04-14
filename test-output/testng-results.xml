@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-04T14:06:14 IDT" name="Default suite" finished-at="2021-04-04T14:07:29 IDT" duration-ms="74479">
+  <suite started-at="2021-04-14T09:42:12 IDT" name="Default suite" finished-at="2021-04-14T09:42:26 IDT" duration-ms="14242">
     <groups>
     </groups>
-    <test started-at="2021-04-04T14:06:14 IDT" name="Default test" finished-at="2021-04-04T14:07:29 IDT" duration-ms="74479">
+    <test started-at="2021-04-14T09:42:12 IDT" name="Default test" finished-at="2021-04-14T09:42:26 IDT" duration-ms="14242">
       <class name="B144.NewTest">
-        <test-method is-config="true" signature="open_brows()[pri:0, instance:B144.NewTest@29647f75]" started-at="2021-04-04T14:06:14 IDT" name="open_brows" finished-at="2021-04-04T14:06:30 IDT" duration-ms="15347" status="PASS">
+        <test-method is-config="true" signature="open_brows()[pri:0, instance:B144.NewTest@10959ece]" started-at="2021-04-14T09:42:12 IDT" name="open_brows" finished-at="2021-04-14T09:42:19 IDT" duration-ms="7354" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- open_brows -->
-        <test-method signature="fullSelf_ragistr()[pri:7, instance:B144.NewTest@29647f75]" started-at="2021-04-04T14:06:30 IDT" name="fullSelf_ragistr" finished-at="2021-04-04T14:07:28 IDT" duration-ms="57994" status="PASS">
+        <test-method signature="full_selfRegister()[pri:7, instance:B144.NewTest@10959ece]" started-at="2021-04-14T09:42:19 IDT" name="full_selfRegister" finished-at="2021-04-14T09:42:25 IDT" duration-ms="6121" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fullSelf_ragistr -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:B144.NewTest@29647f75]" started-at="2021-04-04T14:07:28 IDT" name="afterClass" finished-at="2021-04-04T14:07:29 IDT" duration-ms="1108" status="PASS">
+        </test-method> <!-- full_selfRegister -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:B144.NewTest@10959ece]" started-at="2021-04-14T09:42:25 IDT" name="afterClass" finished-at="2021-04-14T09:42:26 IDT" duration-ms="732" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

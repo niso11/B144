@@ -18,6 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.apache.commons.collections4.Get;
@@ -47,12 +48,16 @@ public class Categories_H1 {
 	
 	public static void excel(WebDriver driver) throws IOException, InterruptedException {
 	
+		try {
+			
+		
 	FileInputStream fis = new FileInputStream (path);
 	XSSFWorkbook wb = new XSSFWorkbook (fis);
 	XSSFSheet sheet = wb.getSheet("test");
 	
+	
 	int kidom=0;
-	while(kidom<11) {
+	while(kidom<10) {
 	XSSFRow row = sheet.getRow(kidom);
 	XSSFCell cell = row.getCell(0);
 	String value = cell.getStringCellValue();
@@ -62,42 +67,38 @@ public class Categories_H1 {
 	
 	
 	Thread.sleep(500);
-	String h1=	elements.H1(driver);
 	
-	Thread.sleep(2000);
+		String h1=	elements.H1(driver);
+		
+	
+	Thread.sleep(1000);
 
 	
 
-/*
-	FileInputStream inputStream = new FileInputStream(new File(path));
-	Workbook workbook = WorkbookFactory.create(inputStream);
-    Sheet sheet1 = workbook.getSheetAt(0);
-	Row r = sheet1.getRow(kidom);
-	r=sheet1.createRow(0);
-	Cell c = r.getCell(1);
-	
-	
-	
-				        			
-		  
-		        			
-		       
-	c.setCellValue(h1);
 
-	FileOutputStream outputStream = new FileOutputStream(path);
- 	workbook.write(outputStream);
-	workbook.close();
-	outputStream.close();
 	
-	*/excelPrint(path, h1, kidom, 1);
+	excelPrint(path, h1, kidom, 1);
+	
+		String num_biS=driver.findElement(By.id("baseMasterContent_Content_searchResultsNum")).getText();
+	excelPrint_num(path, num_biS, kidom, 1);
 	kidom++;
 	}
+		} catch (Exception e) {
+		driver.navigate().back();
+		
+		excel(driver);}
+		
+		
+			
+		
 }
 	
 
+		
+
+
 		public static void excelPrint(String Path, String h1, int rowNumber, int cellNumber) {
 
-		
 			     
 			   try {
 		//פתיחת קובץ האקסל
@@ -124,6 +125,50 @@ public class Categories_H1 {
 			        }
 		//הדפסת הערך לתא הנבחר בטבלה
 		 c.setCellValue(h1);
+		 
+			
+		//כתיבה לקובץ וסגירתו    
+		 FileOutputStream outputStream = new FileOutputStream(Path);
+		 workbook.write(outputStream);
+		workbook.close();
+		outputStream.close();
+			         
+			    } catch (Exception ex) {
+			        ex.printStackTrace();
+			    }
+
+
+		
+	}
+		public static void excelPrint_num(String Path, String num_bis, int rowNumber, int cellNumber) {
+
+		     
+			   try {
+		//פתיחת קובץ האקסל
+		FileInputStream inputStream = new FileInputStream(new File(Path));
+		 Workbook workbook = WorkbookFactory.create(inputStream);
+		//פניה לגליון
+		 Sheet sheet = workbook.getSheetAt(0);//גליון מספר
+		//פניה לשורה
+		Row r = sheet.getRow(rowNumber);
+		 
+		//אופציונלי – בדיקה אם השורה ריקה על מנת לא לדרוס משהו קיים
+		 if (r == null) {
+		//ניתוב לשורה הרצויה
+		r = sheet.createRow(rowNumber);
+			        }
+
+		//ניתוב לעמודה הרצויה. במקרה הזה עמודה אחת
+		Cell c = r.getCell(2);
+
+		 if (c == null) {
+
+			  c=r.createCell(2);
+			        			
+			        }
+		 
+		//הדפסת הערך לתא הנבחר בטבלה
+		 c.setCellValue(num_bis);
 		 
 			
 		//כתיבה לקובץ וסגירתו    

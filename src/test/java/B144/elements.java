@@ -127,7 +127,7 @@ public class elements {
 		WebElement kopon_search_cat=driver.findElement(By.id("txtCategoryInput"));
 		return kopon_search_cat;
 	}*/
-	//@FindBy (how = How.ID, using  = "txtCategoryInput")
+	
 	@FindBy(id="txtCategoryInput")
 	public WebElement kopon_search_cat ;
 //****************************************שדה חיפוש עיר בתוך הקופון**************************************
@@ -303,6 +303,23 @@ public class elements {
 	public static void facebookRate_click(WebDriver driver) {
 		driver.findElement(By.id("loginWithFacebookBtn")).click();
 	}
+	@FindBy(id="input_contactName")
+	public WebElement selfRegister_level1_name ;
+	
+	@FindBy(id="input_businessNameStepOne")
+	public WebElement selfRegister_level1_bisName ;
+	
+	@FindBy(id="input_contactPhone")
+	public WebElement selfRegister_level1_phone ;
+	
+	@FindBy(id="input_contactEmail")
+	public WebElement selfRegister_level1_email ;
+	
+	public static void selfRegister_level1_next_btn(WebDriver driver) {
+		driver.findElement(By.id("btn_form")).click();
+	}
+	
+	
 	 public static void writeString(String s) throws AWTException {
 Robot robot=new Robot();
          for (int i = 0; i < s.length(); i++) {

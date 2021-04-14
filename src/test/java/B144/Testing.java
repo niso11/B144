@@ -65,7 +65,7 @@ public class Testing {
 		extent =t3.GetExtent();
 		test = t3.createTest("senty test", "dayli test");
 		elements pom1 =PageFactory.initElements(driver ,elements.class);
-	//******************************************׳¨׳™׳©׳•׳� ׳¢׳¦׳�׳™*************************************************	
+	//******************************************רישום עצמי*************************************************	
 		
 	}
 	public static void sing_alon() throws InterruptedException, IOException, AWTException {
@@ -91,17 +91,17 @@ public class Testing {
 		 driver.switchTo().frame(2);
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 String sendmeKode= driver.findElement(By.id("popUpNotificationTitle")).getText();
-		 if (sendmeKode.equals("׳©׳�׳™׳—׳× ׳§׳•׳“ ׳�׳™׳�׳•׳×")) {test.pass("level 1 pass");
+		 if (sendmeKode.equals("שליחת קוד אימות")) {test.pass("level 1 pass");
 			}
 		 else {test.fail("level 1 fail",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());}
 		 
-		// assertEquals(sendmeKode,"׳©׳�׳™׳—׳× ׳§׳•׳“ ׳�׳™׳�׳•׳×");
+		
 		 driver.findElement(By.id("popUpNotificationButton")).click();
 		 Thread.sleep(1500);
 		driver.findElement(By.id("notificationWithInputAndCaptcha_input")).sendKeys("55555");
 		driver.findElement(By.id("notificationWithInputAndCaptcha_sendCode")).click();
 		Thread.sleep(500);
-		//****************************************׳¨׳™׳©׳•׳� ׳¢׳¦׳�׳™ ׳©׳�׳‘ 2****************************
+		//****************************************רישום עצמי שלב 2****************************
 		//level 2
 		
 		 String business_level2= driver.findElement(By.id("input_businessName")).getText();
@@ -110,11 +110,11 @@ public class Testing {
 		} else {test.fail("not the same business name",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
 			
 		} 
-		//׳₪׳�׳�׳₪׳•׳�
+		//׳פלאפון
 		pom.selfRegister_phone_level2(driver).sendKeys("0502011359");
 		
 		
-		//׳¢׳™׳¨				
+		//עיר			
 		pom.selfRegister_city_level2(driver).sendKeys("נת");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Random random=new Random();
@@ -122,20 +122,20 @@ public class Testing {
 		
 			
 		
-		//׳¨׳—׳•׳‘
+		//רחוב
 		pom.selfRegister_street_level2(driver).sendKeys("נת");
 		elements.StreetList_level2(driver).get(random.nextInt(elements.StreetList_level2(driver).size())).click();
 	
 	
-	//׳×׳�׳•׳¨ ׳”׳¢׳¡׳§ 
+	//תאור העסק
 	for (int i=0;i<85;i++) {driver.findElement(By.id("input_businessDescription")).sendKeys("1");}
-	//׳§׳˜׳’׳•׳¨׳™׳”
+	//קטגוריה
 	driver.findElement(By.id("input_businessCategory")).sendKeys("הובלות");
-	//׳©׳�׳—
+	//שלח
 	driver.findElement(By.id("btn_form")).click();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	 String thank_you_self=driver.findElement(By.xpath("//*[@class=\"thank_header_dv\"]")).getText();
-	if (thank_you_self.contains("׳×׳•׳“׳” ׳©׳‘׳—׳¨׳× ׳�׳”׳¦׳˜׳¨׳£ ׳�׳�׳�׳•׳× ׳�׳�׳₪׳™")) {test.pass("self Register sent");	
+	if (thank_you_self.contains("תודה שבחרת להצטרף למאות אלפי")) {test.pass("self Register sent");	
 	}
 	else {test.fail("self Register did not sent",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
 
@@ -148,11 +148,11 @@ public class Testing {
 	}
 			
 		
-	//*******************************************׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳�**********************************************
+	//******************************************* כניסת מנויים**********************************************
 		
 	
 	public static void member() throws InterruptedException, IOException, AWTException{
-		test.pass("׳¢׳‘׳¨׳™׳×");
+		
 		
 		/*
 		elements.hamborger_Button(driver);
@@ -161,56 +161,56 @@ public class Testing {
 		Thread.sleep(1000);
 	String members= driver.findElement(By.xpath("//div[@class=\"dv-connect-header\"]")).getText();
 	
-	//********׳‘׳“׳™׳§׳× ׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳� **************88
+	//********בדיקת כניסת מנויים **************88
 	
-	if (members.equals("׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳�")) {
-		test.pass("׳”׳’׳¢׳” ׳�׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳�");
-		test.pass("׳”׳¦׳�׳™׳— ׳�׳”׳’׳™׳¢ ׳�׳“׳£ ׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳�",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
+	if (members.equals("כניסת מנויים")) {
+		test.pass("הגעה לכניסת מנויים");
+		test.pass("הצליח להגיע לדף כניסת מנויים",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
 	} else {
-		test.fail("׳”׳’׳¢׳” ׳�׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳�");
+		test.fail("הגעה לכניסת מנויים");
 	}
 	
-			Assert.assertEquals(members, "׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳�");	
-			
+			Assert.assertEquals(members, "כניסת מנויים");	
+					
 			try {driver.findElement(By.id("txtUserName")).sendKeys("023332556");
 			driver.findElement(By.id("txtUserName")).sendKeys(Keys.TAB);
 			driver.findElement(By.id("txtPassword")).sendKeys("123qwe");
 			driver.findElement(By.id("txtPassword")).sendKeys(Keys.ENTER);
 			Thread.sleep(1000);
 			String member_name=driver.findElement(By.id("Navigation_UserName")).getText();
-			if (member_name.equals("׳“׳ ׳™׳�׳�")) {	
-				test.pass("׳ ׳›׳ ׳¡ ׳�׳�׳ ׳•׳™");
+			if (member_name.equals("דניאל")) {	
+				test.pass("נכנס למנוי");
 			}
-			else {test.fail("׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳� ",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());}
-			
+			else {test.fail("כניסת מנויים ",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());}
+						
 			driver.findElement(By.xpath("//div[@class=\"user_options\"]")).click();
 			Thread.sleep(1000);
-			driver.findElement(By.linkText("׳”׳×׳ ׳×׳§")).click();
+			driver.findElement(By.linkText("התנתק")).click();
 			Thread.sleep(1000);
-			Assert.assertEquals(members, "׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳�");
+			Assert.assertEquals(members, "כניסת מנויים");
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//*[@class=\"desktop-b144-logo\"]")).click();
-			} catch (Exception e) {test.fail("׳�׳� ׳™׳¦׳� ׳�׳›׳ ׳™׳¡׳× ׳�׳ ׳•׳™׳™׳�",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
-			
+			} catch (Exception e) {test.fail("לא יצא לכניסת מנויים",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
+						
 			}
 			*/
 			}
-	//********************************************׳—׳™׳₪׳© ׳¢׳¡׳§׳™׳�**************************************************
+	//********************************************חיפוש עסקים**************************************************
 	
 	public static void search_Business() throws InterruptedException, IOException, AWTException{
 		Thread.sleep(1000);
-		pom.search_Business_bar(driver).sendKeys("׳¦׳�");
+		pom.search_Business_bar(driver).sendKeys("צמ");
 		Thread.sleep(1500);
 		List<WebElement>search_BusinessliList=driver.findElements(By.xpath("/html/body/ul[1]/li"));
 		Thread.sleep(500);
 		search_BusinessliList.get(0).click();
 		
-		//׳›׳₪׳×׳•׳¨ ׳—׳™׳₪׳•׳©
+		//כפתור חיפוש
 		elements.search_button(driver);
-		//׳”׳›׳•׳×׳¨׳×
+		//הכותרת
 		String H1= elements.H1(driver);
-		//assertEquals (H1, "׳¦׳�׳™׳’׳™׳�") ;
-		if (H1.equals("׳¦׳�׳™׳’׳™׳�")) {	
+		
+		if (H1.equals("צמיגים")) {
 			test.pass("H1 and the search are equals");
 		}
 		else {test.fail("H1 and the search are not equals ",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());}
@@ -218,14 +218,14 @@ public class Testing {
 		driver.findElement(By.xpath("//*[@class=\"filter-inner-container\"]/div[2]/a[2]")).click();
 		driver.findElement(By.xpath("//*[@class=\"drop-box-content filter-inner-container\"]/div[2]/a[2]")).click();
 		
-		//׳�׳¡׳₪׳¨׳™׳� ׳—׳©׳•׳₪׳™׳�
+		//מספרים חשופים
 	int num_display =elements.display_number(driver);
 		if (num_display==3) {	test.pass("there are 3 phones are display ");
 		}
 		else {test.fail(" there are less then 3 phones are display",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
 		}
 		
-		//׳�׳¡׳₪׳¨׳™׳� ׳�׳� ׳—׳©׳•׳₪׳™׳�
+		//מספרים לא חשופים
 		int diplay_bis_numbers=elements.numbers_dont_display(driver);
 		if (diplay_bis_numbers==12) {test.pass("there are 12 phones are display ");
 		}
@@ -235,21 +235,21 @@ public class Testing {
 		for (int i=0; i<2; i++) {
 		driver.findElement(By.id("showNumber4_cardPlace")).click();}
 		Thread.sleep(5000);
-		// ׳¢׳•׳“ ׳�׳₪׳©׳¨׳•׳™׳•׳×
+		// עוד אפשרויות
 		elements.more_options(driver);
 		
-		//׳‘׳—׳™׳¨׳× ׳¢׳¡׳§
+		//בחירת עסק
 		elements.bissList(driver);
 		driver.navigate().back();
 		
-		//׳—׳™׳₪׳•׳©׳™׳� ׳”׳•׳‘׳�׳•׳× ׳’׳�׳’׳�׳™׳”
+		//חיפושים הובלות גלגליה
 		pom.search_Business_bar(driver).clear();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		pom.search_Business_bar(driver).sendKeys("׳”׳•׳‘׳�׳•׳×");
+		pom.search_Business_bar(driver).sendKeys("הובלות");
 		Thread.sleep(500);
 		pom.search_city_bar(driver).clear();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		pom.search_city_bar(driver).sendKeys("׳’׳�׳’");
+		pom.search_city_bar(driver).sendKeys("גלג");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		Thread.sleep(1500);
@@ -258,14 +258,14 @@ public class Testing {
 		list_search_city.get(0).click();
 		
 		driver.findElement(By.id("goToMember1")).click();
-		//׳ ׳•׳×׳� ׳©׳™׳¨׳•׳× ׳�׳™׳“ ׳”׳�׳₪׳”
+		//נותן שירות ליד המפה
 		String service_locationString =elements.service_location(driver);
 		if (service_locationString != null  ) {test.pass("service location are display ");
 			}
 		else {
 			test.fail(" service location are not display",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
 		}
-		//׳�׳–׳•׳¨ ׳©׳™׳¨׳•׳× ׳�׳�׳˜׳”	
+		//אזור שירות למטה	
 		if (pom.service_location_butt(driver)!= null) {test.pass("service location button are display ");
 			}
 		else {test.fail(" service location button are not display",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
@@ -273,14 +273,14 @@ public class Testing {
 		}
 		
 	}
-	//********************************׳“׳™׳¨׳•׳’ ׳¢׳¡׳§********************************************************
+	//********************************׳דירוג עסק׳********************************************************
 	
 	public  static void rateBusiness()throws InterruptedException, IOException, AWTException{
 		driver.findElement(By.xpath("//*[@class=\"bcard-inner-header rateBusiness-header\"]")).click();
 		
 		
 		
-		 driver.findElement(By.id("com_body")).sendKeys("׳‘׳“׳™׳§׳”");
+		driver.findElement(By.id("com_body")).sendKeys("בדיקה");
 
 			 List<WebElement>rateBusiness_list=driver.findElements(By.xpath("//*[@id=\"insertRatingContainer\"]/div/div/i"));
 			 for(int i=0;i<rateBusiness_list.size();i++) {rateBusiness_list.get(i).click();}
@@ -304,7 +304,7 @@ public class Testing {
 			else {driver.findElement(By.id("rv-agreement")).click();
 			driver.findElement(By.xpath("//*[@class=\"filling-content\"]/button")).click();}
 			
-			//׳©׳�׳‘ ׳‘׳—׳™׳¨׳× ׳₪׳�׳˜׳₪׳•׳¨׳�׳”
+			//שלב בחירת פלטפורמה
 			if (driver.findElement(By.id("loginWithGoogleBtn"))!=null) 
 			{test.pass("there is goggle button");	
 			} else {test.fail(" there is not facebook button",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
@@ -325,10 +325,10 @@ public class Testing {
 			 WebDriverWait myDynamicElement = (new WebDriverWait(driver, 10));
 					 until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@class=\\\"rv-tnx bp-sub-sec-hdl\\\"]")));
 
-			 //׳‘׳ ׳×׳™׳™׳� ׳�׳� ׳¢׳•׳‘׳“
+			//בנתיים לא עובד
 			 String thank_you_for_shering=driver.findElement(By.xpath("//*[@class=\"rv-tnx bp-sub-sec-hdl\"]")).getText();
 			 
-			 if (thank_you_for_shering.contains("׳×׳•׳“׳” ׳©׳©׳™׳×׳₪׳× ׳�׳•׳×׳ ׳•!")) {test.pass("sher rat warking");
+			 if (thank_you_for_shering.contains("תודה ששיתפת אותנו!")) {test.pass("sher rat warking");
 				
 			} else {test.fail("sher rat are not warking",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());
 			}
@@ -342,7 +342,7 @@ public class Testing {
 		// TODO Auto-generated method stub
 		
 	}
-	//***************************************׳¢׳•׳�׳� ׳”׳§׳•׳₪׳•׳ ׳™׳�**********************************************************************
+	//***************************************עולם הקופונים**********************************************************************
 	public static void kopon_world() throws InterruptedException, IOException, AWTException {
 		elements.hamborger_Button(driver);
 		Thread.sleep(500);
@@ -350,22 +350,22 @@ public class Testing {
 		elements.hamborger_kopon_wrold(driver).get(0).click();
 		
 		String H2=elements.H2_kopon(driver);
-		if (H2=="׳¢׳•׳�׳� ׳”׳§׳•׳₪׳•׳ ׳™׳�") {	test.pass("kopon world page pass");
+		if (H2=="עולם הקופונים") {	test.pass("kopon world page pass");
 		}
 		else {test.fail("kopon world page faill",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());	
 		}
 		
 		elements pom1= PageFactory.initElements(driver, elements.class);
-		pom1.kopon_search_cat.sendKeys("׳�׳¡׳¢׳“׳•׳×");
-		//pom.kopon_search_cat(driver).sendKeys("׳�׳¡׳¢׳“׳•׳×");
-		pom.kopon_search_city(driver).sendKeys("׳ ׳×׳ ׳™׳”");
+		pom1.kopon_search_cat.sendKeys("מסעדות");
+		//pom.kopon_search_cat(driver).sendKeys("מסעדות");
+		pom.kopon_search_city(driver).sendKeys("נתניה");
 		elements.kopon_search_click(driver);
-		//׳©׳�׳™׳—׳× ׳§׳•׳₪׳•׳� ׳�׳�׳¡׳₪׳¨ ׳₪׳�׳�׳₪׳•׳�
+		//שליחת קופון למספר פלאפון
 		elements.kopon(driver);
 		pom.phoneCop(driver).sendKeys("0502011359");
 		pom.send_phone_num(driver).click();
 		elements.close_kodeCop(driver);
-		//׳©׳™׳×׳•׳£ ׳§׳•׳₪׳•׳� ׳¢׳� ׳₪׳™׳™׳¡׳‘׳•׳§
+		//שיתוף קופון עם פייסבוק
 		elements.kopon(driver);
 		elements.shereFacebook(driver);
 		ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
@@ -385,25 +385,25 @@ public class Testing {
 		elements.closeCop(driver);
 		elements.B144logo(driver);	
 	}
-	//********************************************׳—׳™׳₪׳•׳© ׳�׳ ׳©׳™׳�******************************************************
+	//********************************************׳חיפוש עסקים**********************************************
 	
 	public static void search_people() throws InterruptedException, IOException, AWTException {
 		elements pom1= PageFactory.initElements(driver, elements.class);
 		elements.search_people(driver);
-		pom1.searchPeopleBar.sendKeys("׳�׳©׳” ׳›׳”׳�");;
-		//pom.searchPeopleBar(driver).sendKeys("׳�׳©׳” ׳›׳”׳�");
-		pom.searchCityPeopleBar(driver).sendKeys("׳—׳™׳₪׳”");
+		pom1.searchPeopleBar.sendKeys("משה כהן");;
+		//pom.searchPeopleBar(driver).sendKeys("משה כהן");
+		pom.searchCityPeopleBar(driver).sendKeys("חיפה");
 		elements.search_people_Button(driver);
 		elements.peopleResults(driver);
 		driver.navigate().back();
 		//pom.searchPeopleBar(driver).clear();
-		//pom.searchPeopleBar(driver).sendKeys("׳�׳‘׳™ ׳’׳¨׳‘׳™");
+		//pom.searchPeopleBar(driver).sendKeys("אבי גרבי");
 		pom1.searchPeopleBar.clear();
-		pom1.searchPeopleBar.sendKeys("׳�׳‘׳™ ׳’׳¨׳‘׳™");
+		pom1.searchPeopleBar.sendKeys("אבי גרבי");
 		pom.searchCityPeopleBar(driver).clear();
 		elements.search_people_Button(driver);
 		String H1people=elements.H1people(driver);
-		assertEquals(H1people, "׳�׳‘׳™ ׳’׳¨׳‘׳™");
+		assertEquals(H1people, "אבי גרבי");
 		elements.peopleResults(driver);
 		if (driver.findElement(By.xpath("//*[@class=\"pc-buttons\"]")) != null) {test.pass("show number and send me SMS desplay");
 		}
@@ -412,14 +412,14 @@ public class Testing {
 		elements.B144logo(driver);
 	}
 	
-	//*****************************************׳�׳₪׳•׳×*********************************************************
+	//*****************************************מפות*********************************************************
 	
 	public static void maps() throws InterruptedException, IOException, AWTException {
 		elements.hamborger_Button(driver);
 		elements.hamborger_search(driver).get(0).click();
 		elements.hamborger_insaidMenu(driver).get(2).click();
 		Thread.sleep(1000);
-		pom.searchCity_maps(driver).sendKeys("׳–׳‘׳•׳˜");
+		pom.searchCity_maps(driver).sendKeys("זבוט");
 		Thread.sleep(1000);
 		elements.maps_autocom_list(driver).get(0).click();
 		elements.maps_search_But(driver);
@@ -430,18 +430,18 @@ public class Testing {
 		else {test.fail("kopon sher is not good",MediaEntityBuilder.createScreenCaptureFromPath(t3.CaptureScreen(driver)).build());	
 		}
 		}
-	//***********************************************׳�׳™ ׳₪׳ ׳•׳™****************************************************
+	//***********************************************מי פנוי****************************************************
 	
 	public static void MiPanoey() throws InterruptedException, IOException, AWTException {
 		try {elements.MiPanoey_cov19(driver);
 			
 		} catch (Exception e) {	
 		}
-		pom.MiPanoey_search(driver).sendKeys("׳¦׳‘׳™׳¢׳× ׳‘׳“׳™׳�");
+		pom.MiPanoey_search(driver).sendKeys("צביעת בדים");
 		elements.MiPanoey_search_btn(driver);
 		Thread.sleep(1000);
-		pom.MiPanoey_reasonText(driver).sendKeys("׳‘׳“׳™׳§׳” ׳™׳•׳�׳™׳×");
-		pom.MiPanoey_txtAddress(driver).sendKeys("׳—׳™׳₪׳”");
+		pom.MiPanoey_reasonText(driver).sendKeys("בדיקה יומית");
+		pom.MiPanoey_txtAddress(driver).sendKeys("חיפה");
 		Thread.sleep(1000);
 		elements.MiPanoey_cityList(driver);
 		Thread.sleep(1000);
@@ -470,10 +470,22 @@ public class Testing {
 			
 			
 	}
-
-	 public static void  ww() throws InterruptedException, IOException, AWTException  {
+	
+	
+	
+//***************************************חיפוש קטגוריות דרך אקסל********************************
+	 public static void  Categories_H1_excel() throws InterruptedException, IOException, AWTException  {
 	 Categories_H1.excel(driver);
 	 }
+	 
+	 public static void selfRegister_level1() throws IOException, InterruptedException, AWTException {
+	String	url="https://www.b144.co.il/selfRegister/Default.aspx?ref=side_button_hp&orign=selfregister_home_page_144";
+		 driver.get(url);
+		 full_selfRegister.selfRegister_level1(driver);
+	 }
+	 
+	 
+	 
 	 public static void afterClass() throws InterruptedException {
 		 extent.flush();
 		  driver.quit();

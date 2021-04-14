@@ -98,12 +98,15 @@ public class NewTest {
 	public void MiPanoey() throws InterruptedException, IOException, AWTException {
 		Testing.MiPanoey();
 	}
-	*/
-	@Test (priority = 7)
-	public void fullSelf_ragistr() throws InterruptedException, IOException, AWTException {
-		//Categories_H1.excel();
-		Testing.ww();
-		//Categories_H1.hh(driver);
+	
+	@Test (priority = 7)//חיפוש קטגוריות באקסל 
+	public void Categories_H1_excel() throws InterruptedException, IOException, AWTException {
+		Testing.Categories_H1_excel();
+	}*/
+	@Test (priority = 7)//רישום עצמי רגרסיה
+	public void full_selfRegister() throws InterruptedException, IOException, AWTException {
+			Testing.selfRegister_level1();
+		
 	}
 
 	@AfterClass
